@@ -1,0 +1,30 @@
+%% PCA
+all_X_temp = all_X;
+all_X_temp(:,3) = []; % we are not using night lights here, because we want to do better than it
+% boxplot(train_X)
+[coeff,score,latent] = pca(all_X_temp);
+
+% % transform coefficients so that they are orthogonal
+% coefforth = inv(diag(std(train_X)))*wcoeff;
+
+% Xcentered = train_X - repmat(mean(train_X),size(train_X,1),1);
+% sum(sum(abs(Xcentered*inv(coeff') - score)))
+%% figure 3, variance explained by first several principle components
+figure(3)
+pareto(explained)
+xlabel('Principal Component')
+ylabel('Variance Explained (%)')
+
+%%
+cstring = 'rbcg';
+figure(4); hold on;
+for i = 1:888
+    scatter(score(i,1),score(i,2), cstring(train_Y_discrete(i)+2));
+end
+xlabel('1st Principal Component')
+ylabel('2nd Principal Component')
+
+% %%
+% %visualize using biplot
+% figure();
+% biplot(coefforth(:,1:2),'scores',score(:,1:2));
