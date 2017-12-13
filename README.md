@@ -82,7 +82,7 @@ There might be version problems with Tensorflow, Keras and XGBoost. If you are h
 ## Authors
 
 * **Zhihan Jiang** - *XGBoost and documentation*
-* **Yichen Li** - *Feature Selection and Regression on MATLAB*
+* **Yicheng Li** - *Feature Selection and Regression on MATLAB*
 * **Zhaozhuo Xu** - *CNN Data and VAE*
 
 ## Acknowledgments
